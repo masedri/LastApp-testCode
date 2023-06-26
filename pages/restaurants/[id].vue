@@ -1,57 +1,59 @@
 <template>
-  <NuxtLayout
-    name="detail"
-    @open-search="openSearch"
-  >
-    <template
-      v-if="currentRestaurant"
-      #header
+  <div>
+    <NuxtLayout
+      name="detail"
+      @open-search="openSearch"
     >
-      <Restaurant
-        main
-        v-bind="currentRestaurant"
-      />
-    </template>
-    <UILastTabs
-      v-model="currentTab"
-      :tabs="tabs"
-    ></UILastTabs>
-    <div
-      v-if="show"
-      class="grid grid-flow-row grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 h-full content-start overflow-y-scroll"
-    >
-      <TransitionGroup
-        name="fade"
-        appear
+      <template
+        v-if="currentRestaurant"
+        #header
       >
-        <Product
-          v-for="product in products"
-          :key="product.name"
-          v-bind="product"
-          v-model="product.amount"
-          @add-product="calcTotal"
-          @remove-product="calcTotal"
+        <Restaurant
+          main
+          v-bind="currentRestaurant"
+        />
+      </template>
+      <UILastTabs
+        v-model="currentTab"
+        :tabs="tabs"
+      ></UILastTabs>
+      <div
+        v-if="show"
+        class="grid grid-flow-row grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 h-full content-start overflow-y-scroll"
+      >
+        <TransitionGroup
+          name="fade"
+          appear
         >
-        </Product>
-      </TransitionGroup>
+          <Product
+            v-for="product in products"
+            :key="product.name"
+            v-bind="product"
+            v-model="product.amount"
+            @add-product="calcTotal"
+            @remove-product="calcTotal"
+          >
+          </Product>
+        </TransitionGroup>
 
-      <div class="flex absolute w-full bottom-5 justify-center">
-        <button
-          class="w-full md:w-1/2 lg:w-1/3 max-h-[56px] text-center rounded-2xl bg-[#262638] p-4 text-white cursor-pointer text-lg"
-          :class="{ 'opacity-70': !total }"
-          :disabled="!total"
-          @click="openPayModal = true"
-        >
-          TOTAL ({{ +total.toFixed(2) }} €)
-        </button>
+        <div class="flex absolute w-full bottom-5 justify-center">
+          <button
+            class="w-full md:w-1/2 lg:w-1/3 max-h-[56px] text-center rounded-2xl bg-[#262638] p-4 text-white cursor-pointer text-lg"
+            :class="{ 'opacity-70': !total }"
+            :disabled="!total"
+            @click="openPayModal = true"
+          >
+            TOTAL ({{ +total.toFixed(2) }} €)
+          </button>
+        </div>
       </div>
-    </div>
-  </NuxtLayout>
-  <ProductSearchModal
-    v-model="openSearchModal"
-    @add-product="addProduct"
-  ></ProductSearchModal>
-  <UILastPayModal v-model="openPayModal"></UILastPayModal>
+    </NuxtLayout>
+    <ProductSearchModal
+      v-model="openSearchModal"
+      @add-product="addProduct"
+    ></ProductSearchModal>
+    <UILastPayModal v-model="openPayModal"></UILastPayModal>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -107,7 +109,7 @@ const addProduct = (currentProduct: IProduct) => {
 
 <style scoped>
 .fade-enter-active {
-  transition: all 0.5s ease-in;
+  transition: all 0.7s ease-in;
 }
 .fade-leave-active {
   transition: all 0.1s ease-out;

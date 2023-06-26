@@ -18,7 +18,7 @@
           <li
             v-for="product in products"
             :key="product?.name"
-            class="cursor-pointer flex justify-between items-center hover:drop-shadow bg-white transition ease-in p-4 rounded-xl"
+            class="cursor-pointer flex justify-between items-center hover:bg-gray-100 transition ease-in bg-white p-4 rounded-xl"
             @click="addProduct(product)"
           >
             <div class="flex gap-5 items-center">

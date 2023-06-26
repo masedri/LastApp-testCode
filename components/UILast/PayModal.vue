@@ -8,7 +8,7 @@
         @click.stop="open = false"
       >
         <div
-          class="bg-white rounded-lg flex flex-col items-center justify-start overflow-hidden shadow-xl p-5 max-w-1/2 max-h-1/3 w-full h-[150px]"
+          class="bg-white rounded-lg flex flex-col items-center justify-start overflow-hidden shadow-xl p-5 md:w-1/2 md:h-1/3 w-full h-[150px]"
           @click.stop=""
         >
           <div class="w-full justify-end flex">
