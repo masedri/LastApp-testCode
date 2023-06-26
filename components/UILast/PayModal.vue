@@ -36,7 +36,7 @@ const open = defineModel<boolean>()
 const router = useRouter()
 const close = () => {
   open.value = false
-  router.push('/restaurants')
+  router.push('/')
 }
 </script>
 <style scoped>

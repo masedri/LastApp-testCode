@@ -34,21 +34,17 @@
         >
         </Product>
       </TransitionGroup>
-      <Transition
-        name="fade"
-        appear
-      >
-        <div class="flex absolute w-full bottom-5 justify-center">
-          <button
-            class="w-full md:w-1/2 lg:w-1/3 max-h-[56px] text-center rounded-2xl bg-[#262638] p-4 text-white cursor-pointer text-lg"
-            :class="{ 'opacity-70': !total }"
-            :disabled="!total"
-            @click="openPayModal = true"
-          >
-            TOTAL ({{ +total.toFixed(2) }} €)
-          </button>
-        </div>
-      </Transition>
+
+      <div class="flex absolute w-full bottom-5 justify-center">
+        <button
+          class="w-full md:w-1/2 lg:w-1/3 max-h-[56px] text-center rounded-2xl bg-[#262638] p-4 text-white cursor-pointer text-lg"
+          :class="{ 'opacity-70': !total }"
+          :disabled="!total"
+          @click="openPayModal = true"
+        >
+          TOTAL ({{ +total.toFixed(2) }} €)
+        </button>
+      </div>
     </div>
   </NuxtLayout>
   <ProductSearchModal
@@ -111,7 +107,7 @@ const addProduct = (currentProduct: IProduct) => {
 
 <style scoped>
 .fade-enter-active {
-  transition: all 0.7s ease-in;
+  transition: all 0.5s ease-in;
 }
 .fade-leave-active {
   transition: all 0.1s ease-out;
