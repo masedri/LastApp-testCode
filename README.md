@@ -1,6 +1,6 @@
 # LastApp-testCode
 
-This repository contains the test code for the [Last.App](https://www.last.app/). It provides a sample of how to use different technologies and key components of the application.
+This repository contains the test code for the [Last.App](https://www.last.app/).
 
 ## Deployment
 
