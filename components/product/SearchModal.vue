@@ -3,7 +3,7 @@
     <Transition name="fade">
       <div
         v-if="open"
-        class="flex flex-col absolute top-0 h-full w-full z-50 bg-white px-5 py-14 gap-3"
+        class="flex flex-col absolute top-0 h-screen w-full z-50 bg-white px-5 py-14 gap-3"
       >
         <UILastSearch
           v-model="query"
@@ -18,7 +18,7 @@
           <li
             v-for="product in products"
             :key="product?.name"
-            class="cursor-pointer flex justify-between items-center hover:bg-gray-100 transition ease-in bg-white p-4 rounded-xl"
+            class="cursor-pointer flex justify-between items-center hover:bg-gray-100 hover:rounded-xl transition ease-in bg-white p-4"
             @click="addProduct(product)"
           >
             <div class="flex gap-5 items-center">
