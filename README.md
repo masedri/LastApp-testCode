@@ -16,7 +16,7 @@ The application fetches data from the following API endpoint: [https://api.last.
 
 This project utilizes the browser's Geolocation API along with the Haversine formula to calculate the distance between two geographical points. The result is displayed in the user interface using kilometer markers.
 
-Please note that the Haversine formula assumes a perfect spherical Earth and may have slight inaccuracies in real-world scenarios.
+###### Please note that the Haversine formula assumes a perfect spherical Earth and may have slight inaccuracies in real-world scenarios.
 
 ## Technologies Used
 
@@ -63,7 +63,7 @@ Here are some potential improvements and suggestions for enhancing the applicati
 - **Continuous Integration (CI) Flow**: Set up a CI flow to automate build, test, and deployment processes, ensuring code quality and reliability.
 - **Testing with ViteTest and Cypress**: Integrate ViteTest for unit testing and Cypress for end-to-end testing to ensure the functionality and stability of the application.
 
-- ## Finals Thoughts
+## Finals Thoughts
 
 I decided to use Nuxt.js 3 because has improved in many aspects since Nuxt 2.
 

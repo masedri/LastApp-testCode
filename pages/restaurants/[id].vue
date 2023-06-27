@@ -19,7 +19,7 @@
       ></UILastTabs>
       <div
         v-if="show"
-        class="grid grid-flow-row grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 h-full content-start overflow-y-scroll"
+        class="grid grid-flow-row grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-10 h-full content-start overflow-y-scroll"
       >
         <TransitionGroup
           name="fade"
@@ -30,6 +30,7 @@
             :key="product.name"
             v-bind="product"
             v-model="product.amount"
+            class="max-w-[300px]"
             @add-product="calcTotal"
             @remove-product="calcTotal"
           >
