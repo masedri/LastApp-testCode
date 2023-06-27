@@ -6,9 +6,17 @@ This repository contains the test code for the [Last.App](https://www.last.app/)
 
 The application is deployed on [Vercel](https://vercel.com) and can be accessed at the following URL: [https://last-app-test-code-git-master-masedri.vercel.app/](https://last-app-test-code-git-master-masedri.vercel.app/).
 
-## API Endpoint
+## API
+
+### Endpoint
 
 The application fetches data from the following API endpoint: [https://api.last.app/frontend-interview/](https://api.last.app/frontend-interview/).
+
+### Geolocation
+
+This project utilizes the browser's Geolocation API along with the Haversine formula to calculate the distance between two geographical points. The result is displayed in the user interface using kilometer markers.
+
+Please note that the Haversine formula assumes a perfect spherical Earth and may have slight inaccuracies in real-world scenarios.
 
 ## Technologies Used
 

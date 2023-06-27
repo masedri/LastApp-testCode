@@ -17,7 +17,9 @@
         />
         <UILastIcon
           name="start"
-          class="opacity-80 bg-[#262638] rounded-full"
+          class="opacity-80 bg-[#262638] hover:bg-yellow-400 rounded-full hover:scale-110 transition"
+          :class="{ 'bg-yellow-400': fav }"
+          @click="fav = !fav"
         />
       </div>
     </div>
@@ -29,6 +31,7 @@
 
 <script lang="ts" setup>
 defineEmits<{ openSearch: [...payload: any[]] }>()
+const fav = ref(false)
 </script>
 
 <style scoped></style>
