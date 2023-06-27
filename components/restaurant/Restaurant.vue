@@ -23,9 +23,14 @@
           subtitle="comida rápida"
         ></UILastTitle>
         <div class="flex gap-5 font-thin text-xs text-gray-400">
-          <div>{{ `${ratings.average} (${ratings.total})` }}</div>
-          <div>{{ coordinates.latitude }}</div>
-          <div>{{ coordinates.longitude }}</div>
+          <div class="flex gap-1 items-center">
+            <UILastIcon name="mini-start" />
+            <div>{{ `${ratings.average} (${ratings.total})` }}</div>
+          </div>
+          <div class="flex gap-1 items-center">
+            <UILastIcon name="mark" />
+            <div>{{ distanceInKm }}km</div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,7 +39,17 @@
 
 <script lang="ts" setup>
 import { IRestaurantResponse } from '@/repositories/restaurants/types'
-defineProps<IRestaurantResponse>()
+import { getDistance } from '~/utils/location'
+import { useLocation } from '@/composables/useLocation'
+const props = defineProps<IRestaurantResponse>()
+const { coords } = useLocation()
+const distanceInKm = ref(0)
+watch(
+  () => coords.value,
+  () => {
+    distanceInKm.value = getDistance(coords.value!, props.coordinates)
+  }
+)
 </script>
 
 <style scoped></style>

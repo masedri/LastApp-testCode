@@ -15,7 +15,10 @@
           class="bg-[#262638] opacity-80 rounded-full fill-white hover:scale-110 transition"
           @click="$emit('openSearch')"
         />
-        <UILastIcon name="fav" />
+        <UILastIcon
+          name="start"
+          class="opacity-80 bg-[#262638] rounded-full"
+        />
       </div>
     </div>
     <div class="flex flex-col gap-5 relative m-5 h-full overflow-hidden">
